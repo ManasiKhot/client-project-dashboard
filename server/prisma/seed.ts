@@ -68,6 +68,15 @@ const main = async () => {
     skipDuplicates: true,
   });
 
+  const client = await prisma.client.create({
+    data: {
+      name: "TechCorp Client",
+      email: "client@techcorp.com",
+      company: "TechCorp Solutions",
+    },
+  });
+
+  console.log("Client created:", client.email);
   console.log("Seed completed successfully.");
 };
 
